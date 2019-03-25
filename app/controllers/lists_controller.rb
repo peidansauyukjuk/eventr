@@ -40,7 +40,7 @@ before_action :get_list, only: [:show, :edit, :update, :destroy]
   end
 
   def list_params
-    params.require(:list).permit(:name, :task_complete)
+    params.require(:list).permit(:name, :task_complete, :event_id)
   end
 
 end
