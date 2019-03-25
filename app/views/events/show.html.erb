@@ -1,0 +1,7 @@
+<h1><%= @event.name.upcase %></h1>
+Date: <%= @event.date %><br>
+Location: <%= @event.location %><br>
+Budget: $<%= sprintf('%.2f', @event.budget) %><br>
+Description: <%= @event.description %>
+
+<%= button_to "Delete", {controller: :events, action: 'destroy', id: @event.id }, method: :delete %>

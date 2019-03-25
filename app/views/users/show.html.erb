@@ -1,0 +1,9 @@
+<h1>Welcome <%= @user.full_name %></h1>
+
+<h3>Events</h3>
+<%= "this is where all the events this user is a part of will go" %>
+
+<h3>Lists</h3>
+<% "this is where all the lists this user is a part of will go" %>
+
+<%= button_to "Delete", {controller: :users, action: 'destroy', id: @user.id }, method: :delete %>
