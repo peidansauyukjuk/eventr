@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+List.create(name: "Lena's Birthday Party Favors")
+List.create(name: "Lena's Birthday Catering")
+List.create(name: "Lena's Birthday Games")
+List.create(name: "Lena's Birthday Music")
+List.create(name: "Travis Scott Music Tech")
+List.create(name: "Travis Scott Stage Props")
+List.create(name: "Travis Scott Jewelry Cache")
+List.create(name: "Travis Scott Car Maintenance")
