@@ -1,9 +1,28 @@
 <h1>Welcome <%= @user.full_name %></h1>
+<% if logged_in? %>
+  <%= form_tag("/sessions", method: :delete) do %>
+    <%= submit_tag "Logout" %>
+  <% end %>
+<% end %>
+<h2><%= link_to 'Start a New List', new_list_path %></h2>
 
-<h3>Events</h3>
-<%= "this is where all the events this user is a part of will go" %>
+<div><hr>
+  <h2>Your Lists</h2>
+  <ul>
+    <% @user.lists.each do |list| %>
+    <li>
+      <%= link_to list.name, list %>
+    </li>
+    <% end %>
+  </ul>
+</div>
 
-<h3>Lists</h3>
-<% "this is where all the lists this user is a part of will go" %>
 
-<%= button_to "Delete", {controller: :users, action: 'destroy', id: @user.id }, method: :delete %>
+<%# <h3>Events</h3> %>
+<%# "this is where all the events this user is a part of will go" %>
+
+<%# <h3>Lists</h3> %>
+<%# "this is where all the lists this user is a part of will go" %>
+
+
+<%= button_to "Delete Account", {controller: :users, action: 'destroy', id: @user.id }, method: :delete %>
