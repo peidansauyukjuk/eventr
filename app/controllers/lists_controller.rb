@@ -6,7 +6,8 @@ before_action :get_list, only: [:show, :edit, :update, :destroy]
   end
 
   def show
-
+    @item = Item.new
+    @user = User.new
   end
 
   def new
@@ -16,7 +17,8 @@ before_action :get_list, only: [:show, :edit, :update, :destroy]
 
   def create
     @list = List.create(list_params)
-    redirect_to list_path(@list)
+    current_user.lists << @list
+    redirect_to current_user
   end
 
   def edit
